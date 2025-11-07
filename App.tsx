@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChecklistAnswers } from './types';
 import CoverPage from './components/CoverPage';
 import IntroPage from './components/IntroPage';
@@ -14,6 +14,13 @@ const App: React.FC = () => {
     regularity: null,
     noPayment: null,
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [page]);
 
   const totalPages = 4;
 
